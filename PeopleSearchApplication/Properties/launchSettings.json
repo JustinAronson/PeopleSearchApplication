@@ -11,7 +11,7 @@
   "profiles": {
     "People Search": {
       "commandName": "Project",
-      "workingDirectory": "C:\\Users\\justi\\source\\repos\\PeopleSearchApplication\\PeopleSearchApplication",
+      "workingDirectory": "\\Users\\justi\\source\\repos\\PeopleSearchApplication\\PeopleSearchApplication",
       "launchBrowser": true
     }
   }
