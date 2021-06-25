@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>People Search Application</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <h1>People Search Application</h1>
+    <p id="counter"></p>
+    <div id="tabs">
+        <button class="tabButton" onclick="chooseTab('add', this, '#eab5ff')">Add or Update People</button>
+        <button class="tabButton" onclick="chooseTab('search', this, '#adf0f0')">Search for People</button>
+    </div>
+
+    <div id="home" class="tabContent">
+        <p id="welcomeMessage">Welcome to the People Search Application!</p>
+        <p id="welcomeMessage2">Add people with the top left tab to begin</p>
+    </div>
+
+    <div id="add" class="tabContent">
+        <h3 style="margin-top:25px">Add Person</h3>
+
+        <div class="formIn">
+
+            <form action="javascript:void(0);" method="POST" onsubmit="addPerson()">
+                <div class="row">
+                    <div class="rowHead">
+                        <label class="inputLabel" for="fname">*First Name</label>
+                    </div>
+                    <div class="rowIn">
+                        <input type="text" id="fname" placeholder="Enter First Name..." required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="rowHead">
+                        <label class="inputLabel" for="lname">*Last Name</label>
+                    </div>
+                    <div class="rowIn">
+                        <input type="text" id="lname" placeholder="Enter Last Name..." required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="rowHead">
+                        <label class="inputLabel" for="addressStreet">*Street Address</label>
+                    </div>
+                    <div class="rowIn">
+                        <input type="text" id="addressStreet" placeholder="Street Address" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="rowHead">
+                        <label class="inputLabel" for="addressCity">*City</label>
+                    </div>
+                    <div class="rowIn">
+                        <input type="text" id="addressCity" placeholder="City" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="rowHead">
+                        <label class="inputLabel" for="addressState">*State</label>
+                    </div>
+                    <div class="rowIn">
+                        <input type="text" id="addressState" placeholder="State" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="rowHead">
+                        <label class="inputLabel" for="addressZip">*Zip Code</label>
+                    </div>
+                    <div class="rowIn">
+                        <input type="text" id="addressZip" placeholder="Zip Code" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="rowHead">
+                        <label class="inputLabel" for="age">*Age</label>
+                    </div>
+                    <div class="rowIn">
+                        <input type="text" id="age" placeholder="Enter Age..." required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="rowHead">
+                        <label class="inputLabel" for="interests">Interests</label>
+                    </div>
+                    <div class="rowIn">
+                        <textarea id="interests" placeholder="What are your interests? (Opt.)" style="height:150px"></textarea>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="rowHead">
+                        <label class="inputLabel" for="picture">Picture</label>
+                    </div>
+                    <div class="rowIn">
+                        <input type="file" id="picture" accept="image/*" placeholder="Please upload an image (Opt.)">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <input class="subButton "type="submit" value="Add/Update">
+                </div>
+                
+                <p id="addMes"></p>
+            </form>
+
+        </div>
+
+    </div>
+
+    <div id="search" class="tabContent">
+        <div class="slowSearch">
+            <p id="sim">Slow Search Simulation</p>
+            <label class="toggleSwitch">
+                <input type="checkbox" id="slowSwitch">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div class="formIn">
+            <form action="javascript:void(0);" onsubmit="searchPeople()">
+                <div class="row">
+                    <div class="rowHead">
+                        <label class="inputLabel" for="searchParam">Search People</label>
+                    </div>
+                    <div class="rowIn">
+                        <input type="text" id="searchParam" placeholder="Search..." required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <input class="subButton" type="submit" value="Search">
+                </div>
+            </form>
+            <button class="subButton" type="button" onclick="document.getElementById('searchParam').value = ''; getPeople()">Clear</button>
+        </div>
+
+        <table class="peopleTable">
+            <thead>
+                <tr>
+                    <th> Picture </th>
+                    <th> Name </th>
+                    <th> Address </th>
+                    <th> Age </th>
+                    <th> Interests </th>
+                    <th> Keep? </th>
+                </tr>
+            </thead>
+            <tbody id="peopleList"></tbody>
+        </table>
+        <div id="loader"></div>
+        <p id="noneFound"></p>
+
+    </div>
+
+    <button id="unitTests" type="button" onclick="runUnitTests()">Run Unit Tests (Check Console)</button>
+
+
+
+    <script src="js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getPeople();
+    </script>
+</body>
+</html>

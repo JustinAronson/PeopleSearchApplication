@@ -1,0 +1,251 @@
+﻿input[type='submit'], button, [aria-label] {
+    cursor: pointer;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+/* The switch - the box around the slider */
+.toggleSwitch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 17px;
+}
+
+/* Hide default HTML checkbox */
+.toggleSwitch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 20px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+
+
+
+/* Display table */
+.peopleTable {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: Arial;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.peopleTable thead tr {
+    background-color: #009879;
+    color:#ffffff;
+    text-align: left;
+}
+
+.peopleTable th,
+.peopleTable td {
+    padding: 12px 15px;
+}
+
+.peopleTable tbody tr {
+    border-bottom: thin solid #dddddd;
+}
+
+.peopleTable tbody tr:nth-of-type(even) {
+    background-color: #e6e6e6;
+}
+
+.peopleTable tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+/* Keep images from taking up too much space in table */
+img {
+    width: 500px; 
+    height: auto;
+}
+
+/* Tabs and the pages the tabs lead to */
+.tabButton {
+    background-color: #D3D3D3;
+    color: black;
+    float: left;
+    border-radius: 15px 15px 0px 0px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 28px;
+    width: 50%;
+}
+
+.tabButton:hover {
+    background-color: #E3E3E3;
+}
+
+#add {
+    background-color: #eab5ff;
+    display: none;
+    height:100%;
+    margin-top:50px;
+}
+
+#home {
+    background-color: #81e6b1; 
+    display: block;
+    height: 100%;
+    margin-top: 50px;
+}
+
+#search {
+    background-color: #adf0f0;
+    display: none;
+    height:100%;
+    margin-top:50px;
+}
+
+/* The circular loading icon used in slow search */
+#loader {
+    border: 16px solid #adf0f0;
+    border-top: 16px solid #999999;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+    display: none;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#counter {
+    padding: 0px 10px;
+    text-align: right;
+}
+
+.inputLabel {
+    padding: 6px 12px 20px 0;
+    display: inline-block;
+}
+
+/* Style the submit button */
+.subButton {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0px 0px 15px 5px;
+}
+
+/* Style the container */
+.formIn {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+/* Floating column for labels: 25% width */
+.rowHead {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.rowIn {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .rowHead, .rowIn {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+.slowSearch {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+#welcomeMessage {
+    padding-top: 250px;
+    font-size: 40px;
+    text-align: center;
+}
+
+#welcomeMessage2 {
+    margin-top: 15px;
+    font-size: 24px;
+    text-align: center;
+}
+
+#unitTests {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+}
